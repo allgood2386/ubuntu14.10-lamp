@@ -1,5 +1,6 @@
 ---
   - hosts: 127.0.0.1
+    sudo: yes
     vars:
       apache_vhosts:
         # Additional properties: 'serveradmin, extra_parameters'.
