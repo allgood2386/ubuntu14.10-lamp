@@ -1,0 +1,24 @@
+---
+  - hosts: all
+    vars:
+      apache_vhosts:
+        # Additional properties: 'serveradmin, extra_parameters'.
+        - {servername: "site1.dev", documentroot: "/var/www/site1"}
+        - {servername: "site2.dev", documentroot: "/var/www/site1"}
+        - {servername: "site3.dev", documentroot: "/var/www/site1"}
+    pre_tasks:
+      - name: Update apt
+        apt: update_cache=yes cache_valid_time=3600
+
+    roles:
+      - ansible-role-npm
+      - ansible-role-apache
+      - ansible-role-mysql
+      - ansible-role-php
+      - ansible-role-php-mysql
+      - ansible-role-php-pear
+      - ansible-role-php-pecl
+      - ansible-role-php-xdebug
+      - ansible-role-git
+      - ansible-role-composer
+      - ansible-role-drush
