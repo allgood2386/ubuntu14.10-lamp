@@ -8,6 +8,7 @@
         - {servername: "site1.dev", documentroot: "/var/www/site1"}
         - {servername: "site2.dev", documentroot: "/var/www/site1"}
         - {servername: "site3.dev", documentroot: "/var/www/site1"}
+      git_user: yourname
     pre_tasks:
       - name: Update apt
         apt: update_cache=yes cache_valid_time=3600
