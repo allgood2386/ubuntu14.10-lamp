@@ -1,5 +1,5 @@
 ---
-  - hosts: all
+  - hosts: 127.0.0.1
     vars:
       apache_vhosts:
         # Additional properties: 'serveradmin, extra_parameters'.
