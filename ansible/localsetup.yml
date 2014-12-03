@@ -6,12 +6,16 @@
       apache_vhosts:
         # Additional properties: 'serveradmin, extra_parameters'.
         - {servername: "site1.dev", documentroot: "/var/www/site1"}
-        - {servername: "site2.dev", documentroot: "/var/www/site1"}
-        - {servername: "site3.dev", documentroot: "/var/www/site1"}
-      git_user: yourname
+        - {servername: "site2.dev", documentroot: "/var/www/site2"}
+        - {servername: "site3.dev", documentroot: "/var/www/site3"}
     pre_tasks:
       - name: Update apt
         apt: update_cache=yes cache_valid_time=3600
+
+      - name: Ensure Apache is installed.
+        apt: >
+          name=curl
+          state=installed
 
     roles:
       - ansible-role-npm
@@ -22,6 +26,5 @@
       - ansible-role-php-pear
       - ansible-role-php-pecl
       - ansible-role-php-xdebug
-      - ansible-role-git
       - ansible-role-composer
       - ansible-role-drush

@@ -1,6 +1,6 @@
 ## To run:
 
-``ansible-playbook localsetup.yml --connection=local``
+``ansible-playbook localsetup.yml --connection=local -K``
 
 ## To add a site add a configuration to localsetup.yml like so and run the previous command.
 
